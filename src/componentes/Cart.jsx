@@ -18,11 +18,15 @@ function Cart({ onClose }) {
     return () => unsubscribe();
   }, []);
 
-  const total = cartItems.reduce(
-    (sum, item) =>
-      sum + parseFloat(item.price.replace("S/.", "").trim()) * item.qty,
-    0
-  );
+ const total = cartItems.reduce((sum, item) => {
+  const rawPrice = item?.price ?? "0";        // evita undefined
+  const cleanPrice = parseFloat(
+    String(rawPrice).replace("S/.", "").trim()
+  );                                          // garantiza que es string
+  const qty = item?.qty ?? 1;                 // evita undefined
+  return sum + cleanPrice * qty;
+}, 0);
+
 
   const handleCompra = () => {
     if (!user) {

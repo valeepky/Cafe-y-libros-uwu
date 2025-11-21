@@ -7,28 +7,28 @@ const offers = [
     author: "J.K. Rowling",
     oldPrice: "S/. 69.90",
     newPrice: "S/. 49.90",
-    img: "/public/harry.jpg",
+    img: "/harry.jpg",
   },
   {
     title: "It (Eso)",
     author: "Stephen King",
     oldPrice: "S/. 79.90",
     newPrice: "S/. 59.90",
-    img: "/public/it.jpg",
+    img: "/it.jpg",
   },
   {
     title: "Orgullo y prejuicio",
     author: "Jane Austen",
     oldPrice: "S/. 54.90",
     newPrice: "S/. 39.90",
-    img: "/public/orgulloyperjuicio.jpg",
+    img: "/orgulloyperjuicio.jpg",
   },
   {
     title: "El Principito",
     author: "Antoine de Saint-Exupéry",
     oldPrice: "S/. 34.90",
     newPrice: "S/. 24.90",
-    img: "/public/principito.jpg",
+    img: "/principito.jpg",
   },
 ];
 

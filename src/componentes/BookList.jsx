@@ -1,14 +1,14 @@
 import BookCard from "./BookCard";
 
 const books = [
-  { title: "Bajo la misma estrella", img: "/public/portada1.webp" },
-  { title: "Yo antes de ti", img: "/public/portada2.jpg" },
-  { title: "Antes de Diciembre", img: "/public/portada3.webp" },
-  { title: "Perfectos Mentirosos", img: "/public/portada4.webp" },
-  { title: "Boulevard", img: "/public/boulevard.jpg" },
-  { title: "A través de mi ventana", img: "/public/ATDMV.jpg" },
-  { title: "Culpa mía", img: "/public/culpa.jpg" },
-  { title: "Tres metros sobre el cielo", img: "/public/tres.jpg" },
+  { title: "Bajo la misma estrella", img: "/portada1.webp" },
+  { title: "Yo antes de ti", img: "/portada2.jpg" },
+  { title: "Antes de Diciembre", img: "/portada3.webp" },
+  { title: "Perfectos Mentirosos", img: "/portada4.webp" },
+  { title: "Boulevard", img: "/boulevard.jpg" },
+  { title: "A través de mi ventana", img: "/ATDMV.jpg" },
+  { title: "Culpa mía", img: "/culpa.jpg" },
+  { title: "Tres metros sobre el cielo", img: "/tres.jpg" },
 ];
 
 function BookList() {

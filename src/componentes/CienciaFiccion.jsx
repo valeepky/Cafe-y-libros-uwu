@@ -6,25 +6,25 @@ const scifiBooks = [
     title: "Dune",
     author: "Frank Herbert",
     price: "S/. 64.90",
-    img: "/Dune libro.jpg",
+    img: "/Dunelibro.jpg",
   },
   {
     title: "Ready Player One",
     author: "Ernest Cline",
     price: "S/. 52.90",
-    img: "/Ready Player One.jpg",
+    img: "/ReadyPlayerOne.jpg",
   },
   {
     title: "El Fin de la Eternidad",
     author: "Isaac Asimov",
     price: "S/. 48.90",
-    img: "/El Fin de la Eternidad.jpg",
+    img: "/ElFindelaEternidad.jpg",
   },
   {
     title: "Soy Leyenda",
     author: "Richard Matheson",
     price: "S/. 42.90",
-    img: "/Soy Leyenda.jpg",
+    img: "/SoyLeyenda.jpg",
   },
   {
     title: "Hyperion",
@@ -36,7 +36,7 @@ const scifiBooks = [
     title: "Crónicas Marcianas",
     author: "Ray Bradbury",
     price: "S/. 46.90",
-    img: "/Crónicas Marcianas.jpg",
+    img: "/CrónicasMarcianas.jpg",
   },
   {
     title: "Neuromante",
@@ -48,7 +48,7 @@ const scifiBooks = [
     title: "El Juego de Ender",
     author: "Orson Scott Card",
     price: "S/. 49.90",
-    img: "/El Juego de Ender.jpg",
+    img: "/ElJuegodeEnder.jpg",
   },
 ];
 
