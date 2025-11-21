@@ -1,5 +1,5 @@
 import React from "react";
-import { useCart } from "../context/CartContext"; // ✅ Importa el hook del contexto
+import { useCart } from "../context/CartContext";
 
 const romanceBooks = [
   {
@@ -53,11 +53,11 @@ const romanceBooks = [
 ];
 
 export default function Fabaiana() {
-  const { addToCart } = useCart(); // ✅ Llama el hook dentro del componente
+  const { addToCart } = useCart();
 
   return (
     <main id="productos" className="max-w-7xl mx-auto py-12 px-6">
-      <h3 className="text-3xl font-bold mb-10 text-center text-pink-500">
+      <h3 className="text-3xl font-bold mb-10 text-center text-pink-500 drop-shadow-sm">
         💕 Libros de Romance 💕
       </h3>
 
@@ -65,23 +65,28 @@ export default function Fabaiana() {
         {romanceBooks.map((book) => (
           <div
             key={book.title}
-            className="bg-pink-100 shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition transform hover:shadow-2xl"
+            className="bg-pink-50 shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition transform hover:shadow-2xl border border-pink-100"
           >
             <img
               src={book.img}
               alt={book.title}
               className="w-full h-64 object-cover"
             />
-            <div className="p-4 text-center">
+
+            <div className="p-5 text-center">
               <h4 className="text-lg font-semibold text-pink-600">
                 {book.title}
               </h4>
+
               <p className="text-sm text-pink-700/80">{book.author}</p>
-              <p className="text-pink-500 font-bold mt-2">{book.price}</p>
+
+              <p className="text-pink-500 font-bold mt-3 text-lg">
+                {book.price}
+              </p>
 
               <button
-                onClick={() => addToCart(book)} // ✅ Agrega el libro al carrito
-                className="mt-3 w-full bg-pink-400 hover:bg-pink-500 text-white py-2 rounded-full shadow-md transition font-semibold"
+                onClick={() => addToCart(book)}
+                className="mt-4 w-full bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white py-2.5 rounded-full shadow-md transition-all font-semibold"
               >
                 Añadir al carrito
               </button>
@@ -92,4 +97,3 @@ export default function Fabaiana() {
     </main>
   );
 }
-

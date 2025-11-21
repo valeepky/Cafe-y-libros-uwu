@@ -15,6 +15,10 @@ import Fabaiana from "./componentes/Fabaiana";
 import Misterio from "./componentes/Misterio";
 import CienciaFiccion from "./componentes/CienciaFiccion";
 import CartButton from "./componentes/CartButton";
+import { LogIn } from "lucide-react";
+import Login from "./componentes/Login";
+import RegistrarCuenta from "./componentes/RegistrarCuenta";
+import Comunidad from "./componentes/Comunidad";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -60,6 +64,30 @@ function App() {
             element={
               <>
                 <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/comunidad"
+            element={
+              <>
+                <Comunidad />
+              </>
+            }
+          />
+          <Route
+            path="/iniciar-sesion"
+            element={
+              <>
+                <Login />
+              </>
+            }
+          />
+          <Route
+            path="/registrarse"
+            element={
+              <>
+                <RegistrarCuenta />
               </>
             }
           />

@@ -1,23 +1,43 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+
 function Genres() {
+  const genres = [
+    { name: "Ficción", slug: "/ficcion" },
+    { name: "Romance", slug: "/romance" },
+    { name: "Misterio", slug: "/misterio" },
+    { name: "Ciencia Ficción", slug: "/cienciaficcion" }
+  ];
+
   return (
-    <section className="max-w-7xl mx-auto px-6 py-8">
-      <h3 className="text-2xl font-semibold mb-6 text-center text-pink-400">Explora por Género</h3>
-      <div className="flex flex-wrap justify-center gap-4">
-          <Link to="/ficcion" className="px-5 py-2 bg-pink-200 text-pink-700 rounded-full hover:bg-pink-300 hover:scale-105 transition shadow-md">
-            Ficción
+    <section className="max-w-6xl mx-auto px-6 py-10">
+      <h3 className="text-3xl font-bold mb-8 text-center text-pink-500 drop-shadow-sm">
+        Explora por Género
+      </h3>
+
+      <div className="flex flex-wrap justify-center gap-5">
+        {genres.map((g) => (
+          <Link
+            key={g.slug}
+            to={g.slug}
+            className="
+              px-7 py-3 
+              bg-pink-100 
+              text-pink-700 
+              rounded-full 
+              shadow-md 
+              hover:bg-pink-200 
+              hover:shadow-lg
+              hover:-translate-y-1 
+              transition-all 
+              text-lg 
+              font-medium 
+              tracking-wide
+            "
+          >
+            {g.name}
           </Link>
-          <Link to="/romance" className="px-5 py-2 bg-pink-200 text-pink-700 rounded-full hover:bg-pink-300 hover:scale-105 transition shadow-md">
-            Romance
-          </Link>
-         
-          <Link to="/misterio" className="px-5 py-2 bg-pink-200 text-pink-700 rounded-full hover:bg-pink-300 hover:scale-105 transition shadow-md">
-            Misterio
-          </Link>
-            <Link to="/cienciaficcion" className="px-5 py-2 bg-pink-200 text-pink-700 rounded-full hover:bg-pink-300 hover:scale-105 transition shadow-md">
-            Ciencia Ficción
-          </Link>
+        ))}
       </div>
     </section>
   );

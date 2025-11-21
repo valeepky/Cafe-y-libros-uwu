@@ -1,21 +1,38 @@
 import React from "react";
 
-
 function Footer() {
   return (
-    <footer className="bg-pink-100 text-pink-700 text-center py-6 mt-10">
-      <p className="mb-4">&copy; 2025 Librería Ficción. Todos los derechos reservados.</p>
-      <div className="flex justify-center gap-6 text-2xl">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition">
-          <i className="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition">
-          <i className="fa-brands fa-whatsapp"></i>
-        </a>
+    <footer className="bg-gradient-to-r from-pink-100 to-pink-200 text-pink-700 py-10 mt-16 shadow-inner">
+      <div className="container mx-auto text-center">
+        <p className="text-sm md:text-base mb-6 font-medium">
+          &copy; 2025 <span className="font-bold text-pink-600">Librería Ficción</span>.  
+          Todos los derechos reservados.
+        </p>
+
+        <div className="flex justify-center gap-8 text-3xl">
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-600 hover:text-pink-800 transition transform hover:scale-110"
+          >
+            <i className="fa-brands fa-instagram"></i>
+          </a>
+
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/123456789"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-600 hover:text-pink-800 transition transform hover:scale-110"
+          >
+            <i className="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
       </div>
     </footer>
   );
 }
 
 export default Footer;
-

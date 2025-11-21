@@ -1,6 +1,5 @@
 import BookCard from "./BookCard";
 
-// Aquí defines tus libros (nombre + portada)
 const books = [
   { title: "Bajo la misma estrella", img: "/public/portada1.webp" },
   { title: "Yo antes de ti", img: "/public/portada2.jpg" },
@@ -15,14 +14,20 @@ const books = [
 function BookList() {
   return (
     <main id="productos" className="max-w-7xl mx-auto py-12 px-6">
-      <section className="py-16">
-        <div className="container mx-auto">
-          <h3 className="text-3xl font-bold text-pink-700 mb-10 text-center">
-            Nuestros Libros
+      <section className="py-16 bg-pink-50 rounded-3xl shadow-inner">
+        <div className="max-w-7xl mx-auto">
+          
+          <h3 className="text-3xl font-extrabold text-pink-600 drop-shadow text-center mb-12">
+            📚 Nuestros Libros 📚
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+          <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {books.map((book, index) => (
-              <BookCard key={index} title={book.title} img={book.img} />
+              <BookCard 
+                key={index} 
+                title={book.title} 
+                img={book.img} 
+              />
             ))}
           </div>
         </div>
