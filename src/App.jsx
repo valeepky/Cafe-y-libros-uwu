@@ -17,7 +17,7 @@ import CartButton from "./componentes/CartButton";
 import Login from "./componentes/Login";
 import RegistrarCuenta from "./componentes/RegistrarCuenta";
 import Comunidad from "./componentes/Comunidad";
-import PantallaInicio from "./componentes/PantallaInicio";
+
 
 function App() {
   return (
