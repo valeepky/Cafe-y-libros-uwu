@@ -57,7 +57,7 @@ export default function CienciaFiccion() {
 
   return (
     <main id="productos" className="max-w-7xl mx-auto py-12 px-6">
-      <h3 className="text-3xl font-bold mb-10 text-center text-pink-500 drop-shadow">
+      <h3 className="text-3xl font-bold mb-10 text-center text-gray-500 drop-shadow-sm">
         🚀 Libros de Ciencia Ficción 🚀
       </h3>
 
@@ -67,14 +67,14 @@ export default function CienciaFiccion() {
             key={book.title}
             className="
               bg-white 
+              shadow-lg 
               rounded-2xl 
               overflow-hidden 
-              shadow-md 
-              hover:shadow-2xl
+              hover:shadow-2xl 
+              hover:-translate-y-2 
               transition-all 
-              duration-300 
-              hover:-translate-y-2
-              border border-pink-200/40
+              duration-300
+              border border-gray-200
             "
           >
             <img
@@ -84,29 +84,29 @@ export default function CienciaFiccion() {
             />
 
             <div className="p-5 text-center">
-              <h4 className="text-lg font-semibold text-pink-600">
+              <h4 className="text-lg font-semibold text-gray-700">
                 {book.title}
               </h4>
-              <p className="text-sm text-pink-700/70">{book.author}</p>
+              <p className="text-sm text-gray-500">{book.author}</p>
 
-              <p className="text-pink-500 font-bold mt-3 text-lg">
+              <p className="text-gray-600 font-bold mt-3 text-lg">
                 {book.price}
               </p>
 
               <button
                 onClick={() => addToCart(book)}
                 className="
-                  mt-5 
+                  mt-4 
                   w-full 
-                  bg-gradient-to-r from-pink-400 to-pink-500 
-                  hover:from-pink-500 hover:to-pink-600
+                  bg-gray-700 
+                  hover:bg-gray-600 
                   text-white 
                   py-2.5 
                   rounded-full 
                   shadow-md 
-                  hover:shadow-lg 
-                  transition-all
+                  transition-all 
                   font-semibold
+                  hover:shadow-lg
                 "
               >
                 Añadir al carrito
@@ -118,3 +118,7 @@ export default function CienciaFiccion() {
     </main>
   );
 }
+
+
+
+

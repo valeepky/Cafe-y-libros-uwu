@@ -57,7 +57,7 @@ function Products() {
 
   return (
     <main id="productos" className="max-w-7xl mx-auto py-12 px-6">
-      <h3 className="text-3xl font-bold mb-10 text-center text-pink-500 drop-shadow-sm">
+      <h3 className="text-3xl font-bold mb-10 text-center text-gray-700 drop-shadow-sm">
         Libros Destacados
       </h3>
 
@@ -66,14 +66,14 @@ function Products() {
           <div
             key={book.title}
             className="
-              bg-white 
-              shadow-lg 
-              rounded-2xl 
-              overflow-hidden 
-              hover:shadow-2xl 
-              hover:-translate-y-2 
-              transition-all 
-              border border-pink-200
+              bg-gray-100
+              shadow-lg
+              rounded-2xl
+              overflow-hidden
+              hover:shadow-2xl
+              hover:-translate-y-2
+              transition-all
+              border border-gray-300
             "
           >
             <img
@@ -83,29 +83,29 @@ function Products() {
             />
 
             <div className="p-5">
-              <h4 className="text-lg font-bold text-pink-600 leading-tight">
+              <h4 className="text-lg font-bold text-gray-800 leading-tight">
                 {book.title}
               </h4>
 
               <p className="text-sm text-gray-600 mt-1">{book.author}</p>
 
-              <p className="text-pink-500 font-extrabold text-lg mt-3">
+              <p className="text-gray-700 font-extrabold text-lg mt-3">
                 {book.price}
               </p>
 
               <button
                 onClick={() => addToCart(book)}
                 className="
-                  mt-4 
-                  w-full 
-                  bg-pink-500 
-                  hover:bg-pink-600 
-                  text-white 
-                  py-2.5 
-                  rounded-full 
-                  shadow-md 
-                  font-medium 
-                  tracking-wide 
+                  mt-4
+                  w-full
+                  bg-gray-700
+                  hover:bg-gray-800
+                  text-white
+                  py-2.5
+                  rounded-full
+                  shadow-md
+                  font-medium
+                  tracking-wide
                   transition-all
                   hover:shadow-lg
                 "

@@ -171,7 +171,7 @@ function Comunidad() {
 
         await updateDoc(
             doc(db, 'posts', postId, 'comentarios', comentario.id),
-            { texto: nuevoTexto },
+            { texto: nuevoTexto }
         )
     }
 
@@ -193,7 +193,7 @@ function Comunidad() {
                     alt="foto"
                     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
                 />
-                <h1 className="text-2xl font-bold text-pink-600">Bienvenido a la comunidad</h1>
+                <h1 className="text-2xl font-bold text-gray-800">Bienvenido a la comunidad</h1>
                 <p className="mt-1 text-gray-600">
                     Hola, <strong>{nombre}</strong>
                 </p>
@@ -202,12 +202,12 @@ function Comunidad() {
 
             {/* Editar perfil */}
             <div className="bg-white shadow-md rounded-xl p-6 mb-8">
-                <h2 className="text-xl font-bold mb-4 text-pink-600">Editar mis datos</h2>
+                <h2 className="text-xl font-bold mb-4 text-gray-700">Editar mis datos</h2>
 
                 <input
                     type="text"
                     placeholder="Nuevo nombre"
-                    className="w-full p-2 mb-3 border rounded-lg focus:outline-pink-400"
+                    className="w-full p-2 mb-3 border rounded-lg focus:outline-gray-400"
                     value={nuevoNombre}
                     onChange={(e) => setNuevoNombre(e.target.value)}
                 />
@@ -215,14 +215,14 @@ function Comunidad() {
                 <input
                     type="text"
                     placeholder="URL nueva foto"
-                    className="w-full p-2 mb-3 border rounded-lg focus:outline-pink-400"
+                    className="w-full p-2 mb-3 border rounded-lg focus:outline-gray-400"
                     value={nuevaFoto}
                     onChange={(e) => setNuevaFoto(e.target.value)}
                 />
 
                 <button
                     onClick={actualizarPerfil}
-                    className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg"
+                    className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-lg"
                 >
                     Guardar cambios
                 </button>
@@ -230,25 +230,25 @@ function Comunidad() {
 
             {/* Crear publicación */}
             <div className="bg-white shadow-md rounded-xl p-6 mb-8">
-                <h2 className="text-xl font-bold mb-4 text-pink-600">Crear publicación</h2>
+                <h2 className="text-xl font-bold mb-4 text-gray-700">Crear publicación</h2>
 
                 <textarea
                     placeholder="¿Qué estás pensando?"
-                    className="w-full p-3 border rounded-lg mb-4 focus:outline-pink-400"
+                    className="w-full p-3 border rounded-lg mb-4 focus:outline-gray-400"
                     value={contenidoPost}
                     onChange={(e) => setContenidoPost(e.target.value)}
                 />
 
                 <button
                     onClick={crearPost}
-                    className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg"
+                    className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-lg"
                 >
                     Publicar
                 </button>
             </div>
 
             {/* Publicaciones */}
-            <h2 className="text-2xl font-bold mb-4 text-pink-600">Publicaciones</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">Publicaciones</h2>
 
             <div className="space-y-6">
                 {posts.map((post) => {
@@ -258,19 +258,18 @@ function Comunidad() {
                         <div key={post.id} className="bg-white shadow-md rounded-xl p-6">
 
                             {/* Header autor */}
-                            <div className="flex items-center gap-4 mb-4 bg-pink-50 p-4 rounded-2xl border border-pink-200 shadow-sm">
+                            <div className="flex items-center gap-4 mb-4 bg-gray-100 p-4 rounded-2xl border border-gray-300 shadow-sm">
                                 <img
                                     src={post.autorFoto ? post.autorFoto : "/default-avatar.png"}
                                     alt="Foto del autor"
-                                    className="w-12 h-12 rounded-full object-cover border-2 border-pink-300 shadow-md"
+                                    className="w-12 h-12 rounded-full object-cover border-2 border-gray-400 shadow-md"
                                 />
 
                                 <div>
-                                    <p className="font-semibold text-pink-700">{post.autor}</p>
-                                    <p className="text-pink-500 text-sm">{formatearFecha(post.fecha)}</p>
+                                    <p className="font-semibold text-gray-800">{post.autor}</p>
+                                    <p className="text-gray-500 text-sm">{formatearFecha(post.fecha)}</p>
                                 </div>
                             </div>
-
 
                             {/* Contenido */}
                             {editandoID === post.id ? (
@@ -282,7 +281,7 @@ function Comunidad() {
                                     />
                                     <button
                                         onClick={() => guardarEdicion(post.id)}
-                                        className="bg-pink-500 text-white px-3 py-1 rounded-lg mr-2"
+                                        className="bg-gray-700 text-white px-3 py-1 rounded-lg mr-2"
                                     >
                                         Guardar
                                     </button>
@@ -297,11 +296,11 @@ function Comunidad() {
                                 <p className="mb-4">{post.contenido}</p>
                             )}
 
-                            {/* Botones de interacción */}
+                            {/* Botones */}
                             <div className="flex gap-3 mb-4">
                                 <button
                                     onClick={() => toggleLike(post)}
-                                    className="text-pink-500 font-semibold"
+                                    className="text-gray-700 font-semibold"
                                 >
                                     ❤️ {post.likes?.length || 0}
                                 </button>
@@ -330,7 +329,7 @@ function Comunidad() {
 
                             {/* Comentarios */}
                             <div className="border-t pt-4">
-                                <h4 className="font-bold mb-3">
+                                <h4 className="font-bold mb-3 text-gray-800">
                                     Comentarios ({comentarios.length})
                                 </h4>
 
@@ -341,11 +340,11 @@ function Comunidad() {
                                                 src={c.autorFoto}
                                                 className="w-8 h-8 rounded-full object-cover"
                                             />
-                                            <p className="font-semibold text-sm">{c.autor}</p>
+                                            <p className="font-semibold text-sm text-gray-800">{c.autor}</p>
                                             <p className="text-gray-500 text-xs">{formatearFecha(c.fecha)}</p>
                                         </div>
 
-                                        <p className="ml-10 mb-1">{c.texto}</p>
+                                        <p className="ml-10 mb-1 text-gray-700">{c.texto}</p>
 
                                         {c.autorUid === uid && (
                                             <div className="ml-10 flex gap-3 text-sm">
@@ -369,7 +368,7 @@ function Comunidad() {
                                 {/* Agregar comentario */}
                                 <textarea
                                     placeholder="Escribe un comentario..."
-                                    className="w-full p-2 border rounded-lg mt-3 mb-2"
+                                    className="w-full p-2 border rounded-lg mt-3 mb-2 focus:outline-gray-400"
                                     value={inputComentarioPorPost[post.id] || ''}
                                     onChange={(e) =>
                                         setInputComentarioPorPost((prev) => ({
@@ -381,7 +380,7 @@ function Comunidad() {
 
                                 <button
                                     onClick={() => agregarComentario(post.id)}
-                                    className="bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-lg"
+                                    className="bg-gray-700 hover:bg-gray-800 text-white px-3 py-1 rounded-lg"
                                 >
                                     Comentar
                                 </button>
@@ -395,3 +394,4 @@ function Comunidad() {
 }
 
 export default Comunidad
+

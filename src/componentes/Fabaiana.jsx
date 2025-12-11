@@ -57,7 +57,7 @@ export default function Fabaiana() {
 
   return (
     <main id="productos" className="max-w-7xl mx-auto py-12 px-6">
-      <h3 className="text-3xl font-bold mb-10 text-center text-pink-500 drop-shadow-sm">
+      <h3 className="text-3xl font-bold mb-10 text-center text-gray-700 drop-shadow-sm">
         💕 Libros de Romance 💕
       </h3>
 
@@ -65,7 +65,7 @@ export default function Fabaiana() {
         {romanceBooks.map((book) => (
           <div
             key={book.title}
-            className="bg-pink-50 shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition transform hover:shadow-2xl border border-pink-100"
+            className="bg-gray-100 shadow-lg rounded-2xl overflow-hidden hover:scale-105 transition transform hover:shadow-2xl border border-gray-300"
           >
             <img
               src={book.img}
@@ -74,19 +74,19 @@ export default function Fabaiana() {
             />
 
             <div className="p-5 text-center">
-              <h4 className="text-lg font-semibold text-pink-600">
+              <h4 className="text-lg font-semibold text-gray-800">
                 {book.title}
               </h4>
 
-              <p className="text-sm text-pink-700/80">{book.author}</p>
+              <p className="text-sm text-gray-600">{book.author}</p>
 
-              <p className="text-pink-500 font-bold mt-3 text-lg">
+              <p className="text-gray-700 font-bold mt-3 text-lg">
                 {book.price}
               </p>
 
               <button
                 onClick={() => addToCart(book)}
-                className="mt-4 w-full bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white py-2.5 rounded-full shadow-md transition-all font-semibold"
+                className="mt-4 w-full bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 text-white py-2.5 rounded-full shadow-md transition-all font-semibold"
               >
                 Añadir al carrito
               </button>

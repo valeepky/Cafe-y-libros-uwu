@@ -12,12 +12,12 @@ function NavbarUsuario() {
     };
 
     return (
-        <header className="bg-pink-300 shadow-md">
+        <header className="bg-gray-800 shadow-md">
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
                 
                 {/* Logo */}
                 <h1 className="text-2xl font-bold text-white drop-shadow">
-                    Bienvenido
+                    Bienvenido a Cafe y libros ☕📖
                 </h1>
 
                 {/* Botón Hamburguesa móvil */}
@@ -30,16 +30,16 @@ function NavbarUsuario() {
 
                 {/* Menú Desktop */}
                 <nav className="hidden md:block">
-                    <ul className="flex space-x-6 text-white font-medium">
-                        <li><Link to="/" className="hover:text-pink-100 transition">Inicio</Link></li>
-                        <li><Link to="/libros" className="hover:text-pink-100 transition">Libros</Link></li>
-                        <li><Link to="/contacto" className="hover:text-pink-100 transition">Contacto</Link></li>
-                        <li><Link to="/ofertas" className="hover:text-pink-100 transition">Ofertas</Link></li>
-                        <li><Link to="/comunidad" className="hover:text-pink-100 transition">Comunidad</Link></li>
+                    <ul className="flex space-x-6 text-gray-200 font-medium">
+                        <li><Link to="/" className="hover:text-white transition">Inicio</Link></li>
+                        <li><Link to="/libros" className="hover:text-white transition">Libros</Link></li>
+                        <li><Link to="/contacto" className="hover:text-white transition">Contacto</Link></li>
+                        <li><Link to="/ofertas" className="hover:text-white transition">Ofertas</Link></li>
+                        <li><Link to="/comunidad" className="hover:text-white transition">Comunidad</Link></li>
                         <li>
                             <button 
                                 onClick={cerrarSesion}
-                                className="bg-pink-500 hover:bg-pink-400 text-white py-1 px-3 rounded-lg transition shadow"
+                                className="bg-gray-600 hover:bg-gray-500 text-white py-1 px-3 rounded-lg transition shadow"
                             >
                                 Cerrar Sesión
                             </button>
@@ -50,8 +50,8 @@ function NavbarUsuario() {
 
             {/* Menú Móvil */}
             {open && (
-                <div className="md:hidden bg-pink-200 shadow-inner">
-                    <ul className="flex flex-col space-y-4 py-4 px-6 text-pink-800 font-semibold">
+                <div className="md:hidden bg-gray-700 shadow-inner">
+                    <ul className="flex flex-col space-y-4 py-4 px-6 text-gray-200 font-semibold">
                         <li><Link onClick={() => setOpen(false)} to="/">Inicio</Link></li>
                         <li><Link onClick={() => setOpen(false)} to="/libros">Libros</Link></li>
                         <li><Link onClick={() => setOpen(false)} to="/contacto">Contacto</Link></li>
@@ -60,7 +60,7 @@ function NavbarUsuario() {
                         <li>
                             <button 
                                 onClick={cerrarSesion}
-                                className="bg-pink-500 hover:bg-pink-400 text-white py-2 px-4 rounded-lg w-full transition shadow"
+                                className="bg-gray-600 hover:bg-gray-500 text-white py-2 px-4 rounded-lg w-full transition shadow"
                             >
                                 Cerrar Sesión
                             </button>

@@ -2,10 +2,11 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-pink-100 to-pink-200 text-pink-700 py-10 mt-16 shadow-inner">
+    <footer className="bg-gray-900 text-gray-300 py-10 mt-16 shadow-inner">
       <div className="container mx-auto text-center">
+        
         <p className="text-sm md:text-base mb-6 font-medium">
-          &copy; 2025 <span className="font-bold text-pink-600">Librería Ficción</span>.  
+          &copy; 2025 <span className="font-bold text-gray-100">Librería Ficción</span>.  
           Todos los derechos reservados.
         </p>
 
@@ -15,7 +16,7 @@ function Footer() {
             href="https://www.instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-pink-600 hover:text-pink-800 transition transform hover:scale-110"
+            className="text-gray-400 hover:text-gray-200 transition transform hover:scale-110"
           >
             <i className="fa-brands fa-instagram"></i>
           </a>
@@ -25,14 +26,16 @@ function Footer() {
             href="https://wa.me/123456789"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-pink-600 hover:text-pink-800 transition transform hover:scale-110"
+            className="text-gray-400 hover:text-gray-200 transition transform hover:scale-110"
           >
             <i className="fa-brands fa-whatsapp"></i>
           </a>
         </div>
+
       </div>
     </footer>
   );
 }
 
 export default Footer;
+

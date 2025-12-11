@@ -11,7 +11,7 @@ function Genres() {
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-10">
-      <h3 className="text-3xl font-bold mb-8 text-center text-pink-500 drop-shadow-sm">
+      <h3 className="text-3xl font-bold mb-8 text-center text-gray-700 drop-shadow-sm">
         Explora por Género
       </h3>
 
@@ -22,11 +22,11 @@ function Genres() {
             to={g.slug}
             className="
               px-7 py-3 
-              bg-pink-100 
-              text-pink-700 
+              bg-gray-200 
+              text-gray-700 
               rounded-full 
               shadow-md 
-              hover:bg-pink-200 
+              hover:bg-gray-300 
               hover:shadow-lg
               hover:-translate-y-1 
               transition-all 

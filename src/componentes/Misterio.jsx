@@ -57,7 +57,7 @@ export default function Misterio() {
 
   return (
     <main id="productos" className="max-w-7xl mx-auto py-12 px-6">
-      <h3 className="text-3xl font-bold mb-12 text-center text-pink-500">
+      <h3 className="text-3xl font-bold mb-12 text-center text-gray-600">
         🕵️‍♀️ Libros de Misterio y Suspenso 🕵️‍♂️
       </h3>
 
@@ -74,7 +74,7 @@ export default function Misterio() {
               hover:-translate-y-2 
               transition-all 
               duration-300
-              border border-pink-100
+              border border-gray-300
             "
           >
             <img
@@ -84,12 +84,13 @@ export default function Misterio() {
             />
 
             <div className="p-5 text-center">
-              <h4 className="text-lg font-semibold text-pink-600">
+              <h4 className="text-lg font-semibold text-gray-700">
                 {book.title}
               </h4>
-              <p className="text-sm text-pink-700/70">{book.author}</p>
 
-              <p className="text-pink-600 font-bold text-lg mt-3">
+              <p className="text-sm text-gray-500">{book.author}</p>
+
+              <p className="text-gray-700 font-bold text-lg mt-3">
                 {book.price}
               </p>
 
@@ -97,8 +98,8 @@ export default function Misterio() {
                 onClick={() => addToCart(book)}
                 className="
                   mt-4 w-full 
-                  bg-gradient-to-r from-pink-400 to-pink-500 
-                  hover:from-pink-500 hover:to-pink-600 
+                  bg-gradient-to-r from-gray-600 to-gray-700 
+                  hover:from-gray-700 hover:to-gray-800 
                   text-white py-2.5 
                   rounded-full 
                   shadow-md 
