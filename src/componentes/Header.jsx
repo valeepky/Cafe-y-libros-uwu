@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import app from "../firebase";
 
-import NavbarVisitante from "./NavbarVisitante";
-import NavbarUsuario from "./NavbarUsuario";
-
+import NavbarVisitante from './NavbarVisitante';
+import NavbarUsuario from './NavbarUsuario';
 function Header() {
   const [usuario, setUsuario] = useState(undefined); // 👈 IMPORTANTE
   const auth = getAuth(app);
