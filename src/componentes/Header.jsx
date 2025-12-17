@@ -3,7 +3,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import app from "../firebase";
 
 import NavbarVisitante from "./navbarVisitante";
-import NavbarUsuario from "./NavbarUsuario";
+import NavbarUsuario from "./navbarUsuario";
 function Header() {
   const [usuario, setUsuario] = useState(undefined); // 👈 IMPORTANTE
   const auth = getAuth(app);
