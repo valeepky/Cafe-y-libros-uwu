@@ -58,7 +58,7 @@ function Products() {
   return (
     <main id="productos" className="max-w-7xl mx-auto py-12 px-6">
       <h3 className="text-3xl font-bold mb-10 text-center text-gray-700 drop-shadow-sm">
-        Libros Destacados
+        Libros de Ficción
       </h3>
 
       <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

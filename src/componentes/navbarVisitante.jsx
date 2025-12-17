@@ -1,114 +1,41 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 function NavbarVisitante() {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    return (
-        <header className="bg-gray-800 shadow-md relative z-50">
-            <div className="container mx-auto flex justify-between items-center py-4 px-6">
+  return (
+    <header className="bg-gray-800 text-white shadow-md">
+      <div className="flex justify-between items-center px-6 py-4">
+        <h1 className="text-2xl font-bold">Café y Libros ☕📖</h1>
 
-                {/* LOGO */}
-                <h1 className="text-2xl font-bold text-white drop-shadow">
-                    Cafe y libros ☕📖
-                </h1>
+        <button className="md:hidden" onClick={() => setOpen(!open)}>
+          {open ? <X /> : <Menu />}
+        </button>
 
-                {/* Botón Hamburguesa móvil */}
-                <button 
-                    className="md:hidden text-white"
-                    onClick={() => setOpen(!open)}
-                >
-                    {open ? <X size={28} /> : <Menu size={28} />}
-                </button>
+        <nav className="hidden md:flex space-x-6">
+          <Link to="/">Inicio</Link>
+          <Link to="/libros">Libros</Link>
+          <Link to="/ofertas">Ofertas</Link>
+          <Link to="/contacto">Contacto</Link>
+          <Link to="/iniciar-sesion">Iniciar sesión</Link>
+          <Link to="/registrarse">Registrarse</Link>
+        </nav>
+      </div>
 
-                {/* NAV */}
-                <nav
-                    className={`
-                        absolute md:static left-0 top-16 w-full md:w-auto 
-                        bg-gray-800 md:bg-transparent transition-all duration-300 overflow-hidden
-                        ${open ? "max-h-[500px] opacity-100" 
-                               : "max-h-0 opacity-0 md:opacity-100 md:max-h-full"}
-                    `}
-                >
-                    <ul className="flex flex-col md:flex-row md:space-x-6 text-gray-200 font-medium p-4 md:p-0">
-
-                        <li>
-                            <Link 
-                                to="/" 
-                                onClick={() => setOpen(false)}
-                                className="hover:text-white transition block py-2"
-                            >
-                                Inicio
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link 
-                                to="/libros" 
-                                onClick={() => setOpen(false)}
-                                className="hover:text-white transition block py-2"
-                            >
-                                Libros
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link 
-                                to="/contacto" 
-                                onClick={() => setOpen(false)}
-                                className="hover:text-white transition block py-2"
-                            >
-                                Contacto
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link 
-                                to="/ofertas" 
-                                onClick={() => setOpen(false)}
-                                className="hover:text-white transition block py-2"
-                            >
-                                Ofertas
-                            </Link>
-                        </li>
-
-                        {/* INICIAR SESIÓN */}
-                        <li className="mt-2 md:mt-0">
-                            <Link 
-                                to="/iniciar-sesion"
-                                onClick={() => setOpen(false)}
-                                className="
-                                    bg-gray-600 hover:bg-gray-500 
-                                    text-white py-2 px-4 rounded-lg 
-                                    transition shadow block text-center
-                                "
-                            >
-                                Iniciar sesión
-                            </Link>
-                        </li>
-
-                        {/* REGISTRARSE */}
-                        <li className="mt-2 md:mt-0">
-                            <Link 
-                                to="/registrarse"
-                                onClick={() => setOpen(false)}
-                                className="
-                                    bg-gray-600 hover:bg-gray-500 
-                                    text-white py-2 px-4 rounded-lg 
-                                    transition shadow block text-center
-                                "
-                            >
-                                Registrarse
-                            </Link>
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-        </header>
-    );
+      {open && (
+        <nav className="md:hidden bg-gray-700 px-6 py-4 space-y-3">
+          <Link to="/">Inicio</Link>
+          <Link to="/libros">Libros</Link>
+          <Link to="/ofertas">Ofertas</Link>
+          <Link to="/contacto">Contacto</Link>
+          <Link to="/iniciar-sesion">Iniciar sesión</Link>
+          <Link to="/registrarse">Registrarse</Link>
+        </nav>
+      )}
+    </header>
+  );
 }
 
 export default NavbarVisitante;
-

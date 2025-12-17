@@ -1,24 +1,25 @@
-import React from "react";
-import PantallaInicio from "./PantallaInicio";
-
-
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <section className="bg-[url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f')] bg-cover bg-center text-white py-28">
-      <div className="bg-gray-700/70 py-12 px-6 text-center rounded-lg mx-6 md:mx-auto max-w-4xl">
-        <h2 className="text-4xl font-bold mb-4">Explora el mundo de los Libros</h2>
-        <p className="text-lg mb-6">Sumérgete en historias que te transportarán a otros universos.</p>
-        <a
-          href="#productos"
-          className="bg-gray-600 hover:bg-gray-700 px-6 py-3 rounded-full font-semibold transition shadow-lg"
-        >
-          Ver Libros
-        </a>
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300">
+      <div className="bg-white p-12 rounded-2xl shadow-xl text-center max-w-xl">
+        <h1 className="text-5xl font-bold mb-6 text-gray-800">
+          Café y Libros ☕📖
+        </h1>
+
+        <p className="text-gray-600 text-lg mb-8">
+          Descubre historias, comparte ideas y encuentra tu próxima lectura favorita.
+        </p>
+
+        <Link to="/iniciar-sesion">
+          <button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-xl text-lg transition">
+            Iniciar sesión
+          </button>
+        </Link>
       </div>
     </section>
   );
 }
 
 export default Hero;
-

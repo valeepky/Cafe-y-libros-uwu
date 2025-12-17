@@ -1,69 +1,72 @@
 import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+import app from "../firebase";
 
 function RegistrarCuenta() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const auth = getAuth(app);
+  const navigate = useNavigate();
 
-    const registrar = async () => {
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(() => {
-                console.log("Usuario registrado");
-            })
-            .catch((error) => {
-                console.log("Error al crear tu cuenta");
-                console.log(error);
-            });
-    };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    return (
-        <div className="relative flex justify-center items-center h-screen bg-gradient-to-br from-gray-300 to-gray-100 overflow-hidden">
+  const registrar = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("🎉 Cuenta creada correctamente");
+      navigate("/");
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        alert("❌ El correo ya está registrado");
+      } else if (error.code === "auth/weak-password") {
+        alert("❌ La contraseña debe tener al menos 6 caracteres");
+      } else {
+        alert("❌ Error al crear la cuenta");
+      }
+    }
+  };
 
-            <div className="animate-fade-in-up backdrop-blur-md bg-white/70 p-14 rounded-3xl shadow-2xl w-[460px] border border-gray-400">
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#e6e9ee] to-[#dfe3e8]">
+      <form
+        onSubmit={registrar}
+        className="bg-white p-10 rounded-2xl shadow-xl max-w-md w-full"
+      >
+        <h1 className="text-3xl font-bold text-center mb-6">
+          Crear Cuenta
+        </h1>
 
-                <h1 className="text-5xl font-extrabold text-center text-gray-800 mb-12 drop-shadow-lg tracking-wide">
-                    Registrar Cuenta
-                </h1>
+        <input
+          type="email"
+          placeholder="Correo electrónico"
+          className="w-full mb-4 px-4 py-3 border rounded"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
-                <input
-                    type="email"
-                    placeholder="Correo electrónico"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full mb-7 px-6 py-4 text-xl border border-gray-400 rounded-2xl bg-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-600 shadow-inner"
-                />
+        <input
+          type="password"
+          placeholder="Contraseña (mín. 6 caracteres)"
+          className="w-full mb-6 px-4 py-3 border rounded"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
 
-                <input
-                    type="password"
-                    placeholder="Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full mb-10 px-6 py-4 text-xl border border-gray-400 rounded-2xl bg-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-600 shadow-inner"
-                />
-
-                <button
-                    onClick={registrar}
-                    className="w-full bg-gray-700 text-white py-4 text-2xl rounded-2xl shadow-lg hover:bg-gray-800 transition-all active:scale-95 hover:shadow-xl"
-                >
-                    Registrar
-                </button>
-            </div>
-
-            {/* Animaciones personalizadas */}
-            <style>
-                {`
-                @keyframes fade-in-up {
-                    0% { opacity: 0; transform: translateY(30px); }
-                    100% { opacity: 1; transform: translateY(0); }
-                }
-                .animate-fade-in-up {
-                    animation: fade-in-up 0.8s ease-out;
-                }
-                `}
-            </style>
-        </div>
-    );
+        <button
+          type="submit"
+          className="w-full bg-gray-700 text-white py-3 rounded-lg hover:bg-gray-800 transition"
+        >
+          Registrarse
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default RegistrarCuenta;

@@ -1,33 +1,34 @@
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import app from '../firebase';
+import { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import app from "../firebase";
 
-import NavbarVisitante from './navbarVisitante';
-import NavbarUsuario from './navbarUsuario';
+import NavbarVisitante from "./NavbarVisitante";
+import NavbarUsuario from "./NavbarUsuario";
 
 function Header() {
-    const [usuario, setUsuario] = useState(null);
-    const auth = getAuth(app);
+  const [usuario, setUsuario] = useState(undefined); // 👈 IMPORTANTE
+  const auth = getAuth(app);
 
-    useEffect(() => {
-        // Detectar usuario
-        const detectarUsuario = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUsuario(user);
-            } else {
-                setUsuario(null);
-            }
-        });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUsuario(user ?? null);
+    });
 
-        return () => detectarUsuario();
-    }, []);
+    return () => unsubscribe();
+  }, [auth]);
 
-    if (!usuario) {
-        return <NavbarVisitante />;
-    } else {
-        return <NavbarUsuario />;
-    }
+  // ⏳ Mientras Firebase detecta sesión
+  if (usuario === undefined) {
+    return (
+      <header className="bg-gray-800 py-4 px-6 text-white font-semibold">
+        Café y Libros ☕📖
+      </header>
+    );
+  }
+
+  // 👇 SI hay usuario → navbar usuario
+  // 👇 SI NO hay usuario → navbar visitante
+  return usuario ? <NavbarUsuario /> : <NavbarVisitante />;
 }
 
 export default Header;

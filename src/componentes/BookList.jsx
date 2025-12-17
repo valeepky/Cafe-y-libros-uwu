@@ -24,6 +24,35 @@ function BookList() {
           <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {books.map((book, index) => (
               <BookCard 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
                 key={index}
                 title={book.title}
                 img={book.img}
